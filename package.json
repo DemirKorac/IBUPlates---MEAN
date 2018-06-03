@@ -1,0 +1,28 @@
+{
+  "name": "ibuplates",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DemirKorac/IBUPlates---MEAN.git"
+  },
+  "author": "DemirKorac",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DemirKorac/IBUPlates---MEAN/issues"
+  },
+  "homepage": "https://github.com/DemirKorac/IBUPlates---MEAN/blob/master/README.md",
+  "dependencies": {
+    "bcrypt": "^2.0.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.2.1",
+    "mongoose": "^5.1.2",
+    "nodemon": "^1.17.5"
+  }
+}
