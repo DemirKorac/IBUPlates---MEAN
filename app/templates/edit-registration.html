@@ -1,0 +1,19 @@
+<div class="card-content table-responsive" ng-init="showSelectedRegistration()">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header" data-background-color="blue">
+        <h4 class="title">Edit Plates</h4>
+      </div>
+      <div class="card-content">
+        <form>
+          <div class="form-group">
+            <label for="plate">Registration:</label>
+            <input type="text" class="form-control" id="plate" ng-model="registration.plate" value="registration.plate">
+          </div>
+          <button type="submit" class="btn btn-success" ng-click="updateRegistration()">Update</button>
+          <a href="#!/dashboard" class="btn btn-danger"> Cancel</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+<div class="wrapper">
+    <div class="sidebar" data-color="blue" bgcolor="blue" data-image="../assets/img/sidebar-1.jpg">
+        <div class="logo">
+            <a href="#" class="simple-text"><img src="../assets/img/burch_logo.png" alt="Smiley face" height="42" width="35">&nbsp
+                IBU Plates
+                
+            </a>
+
+        </div>
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li ng-class="getClass('/dashboard')">
+                    <a href="#!dashboard" ng-click="menuItemClicked()">
+                        <i class="material-icons">dashboard</i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li ng-class="getClass('/activities/create')">
+                    <a href="#!/activities/create" ng-click="menuItemClicked()">
+                        <i class="material-icons">person</i>
+                        <p>Simulate Entry/Exit</p>
+                    </a>
+                </li>
+                <li ng-class="getClass('/plates')">
+                    <a href="#!/plates" ng-click="menuItemClicked()">
+                        <i class="material-icons">content_paste</i>
+                        <p>Manage Plates</p>
+                    </a>
+                </li>
+                <li ng-class="getClass('/actions')">
+                    <a href="#!/actions" ng-click="menuItemClicked()">
+                        <i class="material-icons">content_paste</i>
+                        <p>Manage Actions</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" ng-click="logout()">
+                        <i class="material-icons">power_settings_new</i>
+                        <p>Logout</p>
+                    </a>
+                </li>
+                <li ng-if="admin">
+                    <a href="#" ng-click="logout()">
+                        <i class="material-icons">power_settings_new</i>
+                        <p>Logout</p>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="main-panel">
+        <nav class="navbar navbar-transparent navbar-absolute">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" ng-click="openNavigationDrawer()">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"> IBU Plates System </a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Logout" ng-click="logout()">
+                                <i class="material-icons">power_settings_new</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="content">
+            <div class="container-fluid">
+                <div ng-view></div>
+            </div>
+        </div>
+    </div>
+</div>

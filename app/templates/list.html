@@ -1,0 +1,25 @@
+<div class="col-md-12" ng-init="getActivities()">
+	<div class="card">
+		<div class="card-header" data-background-color="purple">
+			<h4 class="title">Activities</h4>
+			<p class="category">These are your recent activities</p>
+		</div>
+		<div class="card-content table-responsive">
+			<table class="table">
+				<thead class="text-primary">
+					<th>Car registration</th>
+					<th>Time</th>
+					<th>Action</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="activity in activities">
+						<td class="text-primary">{{ activity.registration }}</td>
+						<td>{{ activity.time }}</td>
+						<td>{{ activity.action }}</td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
