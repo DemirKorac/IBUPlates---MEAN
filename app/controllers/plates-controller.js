@@ -1,7 +1,8 @@
 function platesController($scope,$http,$location,$route,$routeParams, toastr){
-
+	var platesuser = localStorage.getItem('detailsid');
 	$scope.getPlates = function(){
-		$http.get('/api/plates/', {headers: {'x-access-token': localStorage.getItem('user')}}).then(function(response){
+		
+		$http.get('/api/plates/'+platesuser, {headers: {'x-access-token': localStorage.getItem('user')}}).then(function(response){
 			$scope.plates = response.data;
 			
 		});

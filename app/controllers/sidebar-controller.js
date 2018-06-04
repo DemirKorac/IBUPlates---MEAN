@@ -1,4 +1,5 @@
 myApp.controller('sidebarCtrl', function($scope, $location, $http, toastr){
+    $scope.admin=localStorage.getItem('detailsadmin');
     $scope.firstname=localStorage.getItem('detailsfirst');
     $scope.lastname=localStorage.getItem('detailslast');
     $scope.check_login = function(){
@@ -9,6 +10,7 @@ myApp.controller('sidebarCtrl', function($scope, $location, $http, toastr){
     }
 
     $scope.login = function(credentials){
+        $scope.admin=localStorage.getItem('detailsadmin');
         $http.post('/api/authenticate', credentials).then(function(response){
             if (typeof response.data.token != 'undefined'){
                 localStorage.setItem('user',response.data.token);
@@ -30,6 +32,8 @@ myApp.controller('sidebarCtrl', function($scope, $location, $http, toastr){
     $scope.logout = function(){
         localStorage.clear();
     }
+    
+
 
     $scope.getClass = function (path) {
         if (path == '/dashboard' && $location.path() == '/') return 'active';

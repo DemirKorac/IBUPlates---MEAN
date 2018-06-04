@@ -1,4 +1,5 @@
 function addController($scope,$http){
+  var platesuser = localStorage.getItem('detailsid');
     $scope.addActivity = function(){
       var time= $scope.activity.time
       var action= $scope.activity.action
@@ -10,10 +11,20 @@ function addController($scope,$http){
         });
       }
       $scope.getPlates = function(){
-        $http.get('/api/plates/', {headers: {'x-access-token': localStorage.getItem('user')}}).then(function(response){
+        $http.get('/api/plates/'+platesuser, {headers: {'x-access-token': localStorage.getItem('user')}}).then(function(response){
           $scope.plates = response.data;
         });
       }
+      $scope.addUser = function(){
+        var username= $scope.user.username
+        var password= $scope.user.password
+        var firstname= $scope.user.firstname
+        var lastname= $scope.user.lastname
+          $http.post('/api/users/', { 'username':username, 'password':password,'firstname':firstname,'lastname':lastname }, {headers: {'x-access-token': localStorage.getItem('user')}}).then(function(response){
+           
+            window.location.href = '/';
+          });
+        }
 
       $scope.getActions = function(){
         $http.get('/api/actions/', {headers: {'x-access-token': localStorage.getItem('user')}}).then(function(response){

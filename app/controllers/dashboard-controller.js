@@ -1,14 +1,13 @@
 function DashboardController($scope, $route, $routeParams, $http){
-  
+  $scope.firstname=localStorage.getItem('detailsfirst');
+  $scope.lastname=localStorage.getItem('detailslast');
+  var activityuser = localStorage.getItem('detailsid');
+  $scope.admin=localStorage.getItem('detailsadmin');
   $scope.getActivities = function(){
-    $http.get('/api/activities/', {headers: {'x-access-token': localStorage.getItem('user')}}).then(function(response){
+    $http.get('/api/activities/'+ activityuser, {headers: {'x-access-token': localStorage.getItem('user')}}).then(function(response){
       $scope.activities = response.data;
     });
   }
-  $scope.deleteActivity = function(id){
-    var id = id;
-    $http.delete('/api/activities/'+ id, {headers: {'x-access-token': localStorage.getItem('user')}}).then(function(response){
-      $route.reload();
-    });
-  }
+
+  
 }

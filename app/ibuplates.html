@@ -5,7 +5,6 @@
                 IBU Plates
                 
             </a>
-
         </div>
         <div class="sidebar-wrapper">
             <ul class="nav">
@@ -33,18 +32,19 @@
                         <p>Manage Actions</p>
                     </a>
                 </li>
+                <li ng-if='admin==="true"' ng-class="getClass('/adduser')">
+                    <a href="#!/adduser" ng-click="menuItemClicked()">
+                        <i class="material-icons">person</i>
+                        <p>Add user</p>
+                    </a>
+                </li>
                 <li>
                     <a href="#" ng-click="logout()">
                         <i class="material-icons">power_settings_new</i>
                         <p>Logout</p>
                     </a>
                 </li>
-                <li ng-if="admin">
-                    <a href="#" ng-click="logout()">
-                        <i class="material-icons">power_settings_new</i>
-                        <p>Logout</p>
-                    </a>
-                </li>
+                
                 
             </ul>
         </div>

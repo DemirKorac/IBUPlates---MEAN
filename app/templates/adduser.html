@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-12">
+      <div class="card">
+          <div class="card-header" data-background-color="red">
+              <h4 class="title">Simulate Entry/Exit</h4>
+          </div>
+          <div class="card-content">
+            <form ng-submit="addUser()" >
+
+              <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" style="width: 15%" class="form-control" id="username" ng-model="user.username" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" style="width: 15%" class="form-control" id="password" ng-model="user.password" required>
+              </div>
+              <div class="form-group">
+                <label for="firstname">First name:</label>
+                <input type="text" style="width: 15%" class="form-control" id="firstname" ng-model="user.firstname" required>
+              </div>
+              <div class="form-group">
+                <label for="lastname">Last name:</label>
+                <input type="text" style="width: 15%" class="form-control" id="lastname" ng-model="user.lastname" required>
+              </div>
+              <div class="form-group">
+                <label for="role">Role:</label>
+                <select id="roleSelector" ng-model="user.role" required>
+                  <option >Admin</option>
+                  <option >User</option>
+                </select>
+              </div>
+              
+                
+              <button type="submit" class="btn btn-success">Save user</button>
+              <a href="#!/users" class="btn btn-danger"> Cancel</a>
+          </form>
+          </div>
+      </div>
+  </div>
+</div>

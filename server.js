@@ -120,18 +120,13 @@ apiRoutes.get('/', function(req, res){
 	res.json({ message: 'Welcome!', /*firstname:req.decoded.firstname*/ });
 });
 
-//Get all activities
-apiRoutes.get('/activities', function(req, res){
-  Activity.find(function(err, activities){
-    if(err)
-      res.send(err);
-    res.json(activities);
-  })
+apiRoutes.get('/myinfo', function(req, res){
+	res.json(req.decoded);
 });
 
 //Get activity by id
 apiRoutes.get('/activities/:id', function(req, res){
-	Activity.findOne({_id:req.params.id}, function(err, activity){
+	Activity.find({detailsid:req.params.id}, function(err, activity){
 		if(err)
 			res.send(err);
 		res.json(activity);
@@ -171,14 +166,6 @@ apiRoutes.put('/activities/:id', function(req, res){
 	});
 });
 
-//Get all plates
-apiRoutes.get('/plates', function(req, res){
-	Plates.find(function(err, plates){
-	  if(err)
-		res.send(err);
-	  res.json(plates);
-	})
-});
 
 //Create new registration
 apiRoutes.post('/plates', function(req, res){
@@ -203,7 +190,7 @@ apiRoutes.delete('/plates/:id', function(req, res){
 
 //Get Registration by id
 apiRoutes.get('/plates/:id', function(req, res){
-	Plates.findOne({_id:req.params.id}, function(err, plates){
+	Plates.find({ownerid:req.params.id}, function(err, plates){
 		if(err)
 			res.send(err);
 		res.json(plates);
