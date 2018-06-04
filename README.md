@@ -1,5 +1,6 @@
 ![Logo](https://raw.githubusercontent.com/DemirKorac/IBUPlates---MEAN/master/app/assets/img/burch_logo.png)
 
+# IBU Plates
 System for adding license plate of a car and simulating activities like entering and exiting, with adding custom activities from user contribution. 
 Two interfaces for user and admin which differ in the option of adding a new user by the admin.
 Activity review listing available along with the licence plate that did the activity, and the type of the activity.
